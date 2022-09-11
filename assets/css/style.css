@@ -260,3 +260,12 @@ footer {
     position: relative;
     width: 60%;
 }
+
+/* ------------------------------- Skills */
+
+.progress {
+    position: relative;
+    height: 25px;
+    margin-bottom: 4px;
+
+}
