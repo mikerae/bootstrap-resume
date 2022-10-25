@@ -1,3 +1,20 @@
+function userInformationHTML(user) {
+    return `
+        <h2>${user.name}
+            <span class="small-name">
+                (@<a href="${user.html_url}" target="_blank">${user.login}<a/>)
+            </span>
+        </h2>
+        <div class="gh-content">
+            <div class="gh-avatar">
+                <a href="${user.html_url}" target="_blank">
+                    <img src="${user.avatar_url}" width="80" height="80" alt="${user.login}" />
+                </a>
+            </div>
+            <p>Followers: ${user.followers} - Following ${user.following} <br> Repos: ${user.public_repos}</p>
+        </div>`;
+}
+
 function fetchGitHubInformation(event) {
 
     const username = $("#gh-username").val();
@@ -11,7 +28,7 @@ function fetchGitHubInformation(event) {
             <img src="assets/css/loader.gif" alt="loading..." />
         </div>`);
     $.when(
-        $.getJSON('https://api.github.com/users/$(username)')
+        $.getJSON(`https://api.github.com/users/${username}`)
     ).then(
         function (response) {
             const userData = response;
@@ -25,6 +42,5 @@ function fetchGitHubInformation(event) {
                 $("#gh-user-data").html(
                     `<h2>Error: ${errorResponse.responseJSON.message}</h2>>`);
             }
-        }
-    );
+        });
 }
