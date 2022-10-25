@@ -17,7 +17,7 @@ function userInformationHTML(user) {
 
 function repoInformationHTML(repos) {
     if (repos.length == 0) {
-        return `<div class="clearfix repo-list">No repos!</div>`;
+        return `<div class = "clearfix repo-list" > No repos! </div>`;
     }
 
     const listItemsHTML = repos.map(function (repo) {
@@ -37,6 +37,8 @@ function repoInformationHTML(repos) {
 }
 
 function fetchGitHubInformation(event) {
+    $("#gh-user-data").html("");
+    $("#gh-repo-data").html("");
 
     const username = $("#gh-username").val();
     if (!username) {
@@ -70,3 +72,5 @@ function fetchGitHubInformation(event) {
             }
         });
 }
+
+$(document).ready(fetchGitHubInformation);
