@@ -13,6 +13,17 @@
         type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Rosie</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("GzTlxbWSsqbesRLE1");
+            emailjs.send('service_5a8rbzg', 'template_vnm4chg', {
+                name: "Mike",
+                notes: "The project that I want is ...."
+            })
+        })();
+    </script>
 </head>
 
 <body>
