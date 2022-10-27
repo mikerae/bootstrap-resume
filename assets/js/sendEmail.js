@@ -12,5 +12,6 @@ function sendMail(contactForm) {
                 console.log("FAILED", error);
             }
         );
+    contactForm().reset; // Added by MR to clear the form after send
     return false; // To Block from loading a new page
 }
